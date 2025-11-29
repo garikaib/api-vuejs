@@ -1,4 +1,4 @@
-# ZimPriceCheck VueJS Tools
+# Zimpricecheck VueJS Tools
 
 This plugin integrates various VueJS-based tools, calculators, and sales forms into WordPress via shortcodes. It pulls the latest updates from the Zimpricecheck API and provides a seamless experience for users.
 
@@ -26,6 +26,7 @@ E-commerce forms for purchasing various services.
 *   **NetOne Bundles**: Sales form for NetOne bundles.
 *   **TelOne ZWL**: Cart for TelOne ZWL bundles.
 *   **ZESA USD Express**: USD token purchase form for ZESA.
+*   **Airtime Post Form**: USD airtime form displayed below post content.
 
 ### 4. Utilities
 *   **Join WhatsApp**: Adds a "Join WhatsApp" link/button to posts (currently disabled).
@@ -48,6 +49,7 @@ Use the following shortcodes to embed the tools in your pages or posts:
 | `[netone-bundles]` | Displays the NetOne Bundles Form. | `Sales\NetOneBundles` |
 | `[telone-form]` | Displays the TelOne ZWL Cart. | `Sales\TelOneZwl` |
 | `[zesa_usd]` | Displays the ZESA USD Express Form. | `Sales\ZesaUsdExpress` |
+| `[zpc_usd_form]` | Displays the Airtime Post Form. | `Sales\AirtimePostForm` |
 
 ## Code Structure
 
@@ -76,9 +78,12 @@ api-vuejs/
 │       ├── Sales/
 │       │   ├── TelOneUsd.php
 │       │   ├── LiquidHome.php
+│       │   ├── AirtimePostForm.php
 │       │   ├── ...
-│       └── Utilities/
-│           └── JoinWhatsApp.php
+│       ├── Utilities/
+│       │   └── JoinWhatsApp.php
+│       └── Admin/
+│           └── OptionsPage.php
 ```
 
 ### Key Concepts

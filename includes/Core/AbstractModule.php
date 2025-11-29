@@ -1,5 +1,5 @@
 <?php
-namespace ZimPriceCheck\Core;
+namespace Zimpricecheck\Core;
 
 if (!defined('ABSPATH')) {
     exit;

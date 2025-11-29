@@ -1,7 +1,7 @@
 <?php
-namespace ZimPriceCheck\Modules\Sales;
+namespace Zimpricecheck\Modules\Sales;
 
-use ZimPriceCheck\Core\AbstractModule;
+use Zimpricecheck\Core\AbstractModule;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -45,7 +45,7 @@ class LiquidHome extends AbstractModule
 
     public function add_liquid_bundle_schema($pieces, $context)
     {
-        if ($context->id === 16276 && class_exists('ZPC_Product')) {
+        if ($context->id === 16276 && class_exists('\Zimpricecheck\Core\Schema\Product')) {
             $offer_data = [
                 '@type' => 'AggregateOffer',
                 'offerCount' => '5',
@@ -68,7 +68,7 @@ class LiquidHome extends AbstractModule
                 'offer' => $offer_data,
             ];
 
-            $pieces[] = new \ZPC_Product($context, $product_data);
+            $pieces[] = new \Zimpricecheck\Core\Schema\Product($context, $product_data);
         }
 
         return $pieces;

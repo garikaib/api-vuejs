@@ -1,7 +1,7 @@
 <?php
-namespace ZimPriceCheck\Modules\Utilities;
+namespace Zimpricecheck\Modules\Utilities;
 
-use ZimPriceCheck\Core\AbstractModule;
+use Zimpricecheck\Core\AbstractModule;
 
 if (!defined('ABSPATH')) {
     exit;

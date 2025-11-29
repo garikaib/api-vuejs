@@ -1,10 +1,34 @@
 <?php
-// error_log("We are inside options!");
-// Check if ACF function exists for versions prior to 5.x
-if (!function_exists('zp_vuejs_options')) {
-    function zp_vuejs_options()
+namespace Zimpricecheck\Modules\Admin;
+
+use Zimpricecheck\Core\AbstractModule;
+use Redux;
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+class OptionsPage extends AbstractModule
+{
+    public function register_shortcodes()
     {
-        $args = array(
+        // No shortcodes for this module
+    }
+
+    public function enqueue_scripts()
+    {
+        // No frontend scripts
+    }
+
+    public function __construct()
+    {
+        parent::__construct();
+        add_action('redux/loaded', array($this, 'register_options'));
+    }
+
+    public function get_options_args()
+    {
+        return array(
             'opt_name' => 'theme_options',
             'display_name' => 'Theme Options',
             'menu_title' => 'Theme Options',
@@ -38,17 +62,12 @@ if (!function_exists('zp_vuejs_options')) {
             'admin_bar_icon' => 'dashicons-admin-generic',
             'admin_bar_priority' => 50,
         );
-
-        return $args;
     }
-}
 
-// require_once plugin_dir_path(__FILE__) . 'options/web-app-options.php';
-if (!function_exists('zp_vuejs_options')) {
-    function zp_vuejs_options_page()
+    public function register_options()
     {
         if (class_exists('Redux')) {
-            Redux::setArgs('theme_options', zp_vuejs_options());
+            Redux::setArgs('theme_options', $this->get_options_args());
             Redux::setSections('theme_options', array(
                 array(
                     'title' => 'General',
@@ -70,5 +89,4 @@ if (!function_exists('zp_vuejs_options')) {
             ));
         }
     }
-    add_action('redux/loaded', 'zp_vuejs_options_page');
 }

@@ -1,21 +1,21 @@
 <?php
-/**
- * Schema
- *
- * @package VenuesLive
- */
+namespace Zimpricecheck\Core\Schema;
 
 use Yoast\WP\SEO\Generators\Schema\Abstract_Schema_Piece;
 
+if (!defined('ABSPATH')) {
+    exit;
+}
+
 /**
- * Class Review.
+ * Class Product.
  */
-class ZPC_Product extends Abstract_Schema_Piece
+class Product extends Abstract_Schema_Piece
 {
     /**
      * A value object with context variables.
      *
-     * @var WPSEO_Schema_Context
+     * @var \WPSEO_Schema_Context
      */
     public $context;
 
@@ -31,9 +31,10 @@ class ZPC_Product extends Abstract_Schema_Piece
     /**
      * Review constructor.
      *
-     * @param WPSEO_Schema_Context $context Value object with context variables.
+     * @param \WPSEO_Schema_Context $context Value object with context variables.
+     * @param array $data Product data.
      */
-    public function __construct(\WPSEO_Schema_Context$context, array $data = [])
+    public function __construct(\WPSEO_Schema_Context $context, array $data = [])
     {
         $this->context = $context;
         $this->product_data = $data;

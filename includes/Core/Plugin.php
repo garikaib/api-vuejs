@@ -1,5 +1,5 @@
 <?php
-namespace ZimPriceCheck\Core;
+namespace Zimpricecheck\Core;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -44,19 +44,21 @@ class Plugin
      */
     private function load_modules()
     {
-        $this->modules[] = new \ZimPriceCheck\Modules\Calculators\OmariCalculator();
-        $this->modules[] = new \ZimPriceCheck\Modules\Calculators\FxCalculator();
-        $this->modules[] = new \ZimPriceCheck\Modules\Charts\RatesChart();
-        $this->modules[] = new \ZimPriceCheck\Modules\Charts\InflationChart();
-        $this->modules[] = new \ZimPriceCheck\Modules\Sales\TelOneUsd();
-        $this->modules[] = new \ZimPriceCheck\Modules\Sales\LiquidHome();
-        $this->modules[] = new \ZimPriceCheck\Modules\Sales\UsdAirtime();
-        $this->modules[] = new \ZimPriceCheck\Modules\Sales\PinlessUsd();
-        $this->modules[] = new \ZimPriceCheck\Modules\Sales\ZesaExpress();
-        $this->modules[] = new \ZimPriceCheck\Modules\Sales\NetOneBundles();
-        $this->modules[] = new \ZimPriceCheck\Modules\Sales\TelOneZwl();
-        $this->modules[] = new \ZimPriceCheck\Modules\Sales\ZesaUsdExpress();
-        $this->modules[] = new \ZimPriceCheck\Modules\Utilities\JoinWhatsApp();
+        $this->modules[] = new \Zimpricecheck\Modules\Calculators\OmariCalculator();
+        $this->modules[] = new \Zimpricecheck\Modules\Calculators\FxCalculator();
+        $this->modules[] = new \Zimpricecheck\Modules\Charts\RatesChart();
+        $this->modules[] = new \Zimpricecheck\Modules\Charts\InflationChart();
+        $this->modules[] = new \Zimpricecheck\Modules\Sales\TelOneUsd();
+        $this->modules[] = new \Zimpricecheck\Modules\Sales\LiquidHome();
+        $this->modules[] = new \Zimpricecheck\Modules\Sales\UsdAirtime();
+        $this->modules[] = new \Zimpricecheck\Modules\Sales\PinlessUsd();
+        $this->modules[] = new \Zimpricecheck\Modules\Sales\ZesaExpress();
+        $this->modules[] = new \Zimpricecheck\Modules\Sales\NetOneBundles();
+        $this->modules[] = new \Zimpricecheck\Modules\Sales\TelOneZwl();
+        $this->modules[] = new \Zimpricecheck\Modules\Sales\ZesaUsdExpress();
+        $this->modules[] = new \Zimpricecheck\Modules\Sales\AirtimePostForm();
+        $this->modules[] = new \Zimpricecheck\Modules\Utilities\JoinWhatsApp();
+        $this->modules[] = new \Zimpricecheck\Modules\Admin\OptionsPage();
     }
 
     /**

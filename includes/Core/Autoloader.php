@@ -1,5 +1,5 @@
 <?php
-namespace ZimPriceCheck\Core;
+namespace Zimpricecheck\Core;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -14,7 +14,7 @@ class Autoloader
 
     public static function autoload($class)
     {
-        $prefix = 'ZimPriceCheck\\';
+        $prefix = 'Zimpricecheck\\';
         $base_dir = plugin_dir_path(dirname(__DIR__)) . 'includes/';
 
         $len = strlen($prefix);
