@@ -16,15 +16,6 @@ if (!defined('ABSPATH')) {
 
 
 
-/**
- * Registers shortcodes.
- */
-
-
-//Add below post form
-// add_action('avada_before_additional_post_content', 'show_usd_below_post_airtime_form');
-// add_filter('the_content', 'zp_send_wa_link');
-
 // Initialize Core Plugin
 require_once plugin_dir_path(__FILE__) . 'includes/Core/Plugin.php';
 \Zimpricecheck\Core\Plugin::get_instance();
