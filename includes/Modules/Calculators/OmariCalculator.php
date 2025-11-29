@@ -1,5 +1,5 @@
 <?php
-namespace ZimPriceCheck\Modules;
+namespace ZimPriceCheck\Modules\Calculators;
 
 use ZimPriceCheck\Core\AbstractModule;
 
@@ -17,12 +17,12 @@ class OmariCalculator extends AbstractModule
     public function enqueue_scripts()
     {
         // Calculate the root URL of the plugin
-        $plugin_url = plugin_dir_url(dirname(dirname(__DIR__)) . '/api-vuejs.php');
+        $plugin_url = plugin_dir_url(dirname(dirname(dirname(__DIR__))) . '/api-vuejs.php');
 
         // Register styles
         wp_register_style(
             'omari-calculator-style',
-            $plugin_url . 'omari-calculator/assets/dist/omari-calculator.css',
+            $plugin_url . 'assets/omari-calculator/assets/dist/omari-calculator.css',
             array(),
             '1.0.0'
         );
@@ -30,7 +30,7 @@ class OmariCalculator extends AbstractModule
         // Register scripts
         wp_register_script(
             'omari-calculator-script',
-            $plugin_url . 'omari-calculator/assets/dist/omari-calculator.js',
+            $plugin_url . 'assets/omari-calculator/assets/dist/omari-calculator.js',
             array(),
             '1.0.0',
             true

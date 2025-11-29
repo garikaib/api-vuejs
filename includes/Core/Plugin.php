@@ -44,8 +44,18 @@ class Plugin
      */
     private function load_modules()
     {
-        $this->modules[] = new \ZimPriceCheck\Modules\OmariCalculator();
-        $this->modules[] = new \ZimPriceCheck\Modules\FxCalculator();
+        $this->modules[] = new \ZimPriceCheck\Modules\Calculators\OmariCalculator();
+        $this->modules[] = new \ZimPriceCheck\Modules\Calculators\FxCalculator();
+        $this->modules[] = new \ZimPriceCheck\Modules\Charts\RatesChart();
+        $this->modules[] = new \ZimPriceCheck\Modules\Charts\InflationChart();
+        $this->modules[] = new \ZimPriceCheck\Modules\Sales\TelOneUsd();
+        $this->modules[] = new \ZimPriceCheck\Modules\Sales\LiquidHome();
+        $this->modules[] = new \ZimPriceCheck\Modules\Sales\UsdAirtime();
+        $this->modules[] = new \ZimPriceCheck\Modules\Sales\PinlessUsd();
+        $this->modules[] = new \ZimPriceCheck\Modules\Sales\ZesaExpress();
+        $this->modules[] = new \ZimPriceCheck\Modules\Sales\NetOneBundles();
+        $this->modules[] = new \ZimPriceCheck\Modules\Sales\TelOneZwl();
+        $this->modules[] = new \ZimPriceCheck\Modules\Sales\ZesaUsdExpress();
     }
 
     /**

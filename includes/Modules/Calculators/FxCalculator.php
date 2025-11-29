@@ -1,5 +1,5 @@
 <?php
-namespace ZimPriceCheck\Modules;
+namespace ZimPriceCheck\Modules\Calculators;
 
 use ZimPriceCheck\Core\AbstractModule;
 
@@ -16,8 +16,8 @@ class FxCalculator extends AbstractModule
 
     public function enqueue_scripts()
     {
-        $plugin_url = plugin_dir_url(dirname(dirname(__DIR__)) . '/api-vuejs.php');
-        $base_url = $plugin_url . 'fx-calc/';
+        $plugin_url = plugin_dir_url(dirname(dirname(dirname(__DIR__))) . '/api-vuejs.php');
+        $base_url = $plugin_url . 'assets/fx-calc/';
 
         // Register and enqueue scripts.
         wp_enqueue_script('zimpricecheck-fx-calc1', $base_url . 'index.521592b0.js', array(), null, true);
