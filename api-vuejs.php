@@ -27,7 +27,7 @@ function zpc_product_schema()
 require_once plugin_dir_path(__FILE__) . 'options/options-page.php';
 require_once plugin_dir_path(__FILE__) . "rates-chart/rates.php";
 require_once plugin_dir_path(__FILE__) . "inflation-rates/inflation.php";
-require_once plugin_dir_path(__FILE__) . "fx-calc/fx-calc.php";
+// require_once plugin_dir_path(__FILE__) . "fx-calc/fx-calc.php"; // Migrated to ZimPriceCheck\Modules\FxCalculator
 require_once plugin_dir_path(__FILE__) . "join-wa/join-wa.php";
 require_once plugin_dir_path(__FILE__) . "telone-usd/telone-usd.php";
 require_once plugin_dir_path(__FILE__) . "liquid-home/liquid-home.php";
@@ -40,7 +40,7 @@ require_once plugin_dir_path(__FILE__) . "zesa-usd-express/zesa-express.php";
 require_once plugin_dir_path(__FILE__) . "netone-bundles/netone.php";
 require_once plugin_dir_path(__FILE__) . "telone-zwl/telone-zwl.php";
 require_once plugin_dir_path(__FILE__) . "zimloan/zimloan.php";
-require_once plugin_dir_path(__FILE__) . "omari-calculator/omari-calculator.php";
+// require_once plugin_dir_path(__FILE__) . "omari-calculator/omari-calculator.php"; // Migrated to ZimPriceCheck\Modules\OmariCalculator
 
 
 /**
@@ -49,7 +49,7 @@ require_once plugin_dir_path(__FILE__) . "omari-calculator/omari-calculator.php"
 
 add_shortcode('zim-rates-chart', 'show_latest_rates_chart');
 add_shortcode('zim-inflation-chart', 'show_latest_inflation_chart');
-add_shortcode('zim-fx-calc', 'show_rates_calculator');
+// add_shortcode('zim-fx-calc', 'show_rates_calculator'); // Migrated
 add_shortcode('telone-usd', 'show_telone_usd_cart');
 add_shortcode('lt-sales', 'show_liquid_home_cart');
 add_shortcode('usd-airtime-sales', 'show_usd_airtime_cart');
@@ -75,7 +75,7 @@ function add_module_to_vue_scripts($tag, $handle, $src)
     $module_scripts = array(
         'zimpricecheck-rates-js',
         'zimpricecheck-inflation-js',
-        'zimpricecheck-fx-calc2',
+        // 'zimpricecheck-fx-calc2', // Migrated
         'zp-send-wa-js',
         'zpc_telone_usd_js',
         'zpc_telone_zwl_js',
@@ -85,7 +85,7 @@ function add_module_to_vue_scripts($tag, $handle, $src)
         'zpc_pinless_js',
         'netone_bundles_js',
         'zpc_zesausdexpress_js',
-        'omari-calculator-script',
+        // 'omari-calculator-script', // Migrated
     );
     if (in_array($handle, $module_scripts, true)) {
         $tag = '<script type="module" src="' . esc_url($src) . '"></script>';
@@ -93,3 +93,7 @@ function add_module_to_vue_scripts($tag, $handle, $src)
     return $tag;
 }
 add_filter('script_loader_tag', 'add_module_to_vue_scripts', 10, 3);
+
+// Initialize Core Plugin
+require_once plugin_dir_path(__FILE__) . 'includes/Core/Plugin.php';
+\ZimPriceCheck\Core\Plugin::get_instance();

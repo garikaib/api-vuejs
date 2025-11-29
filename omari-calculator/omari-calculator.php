@@ -17,7 +17,7 @@ class ZP_Omari_Calculator
         // Register styles
         wp_register_style(
             'omari-calculator-style',
-            plugins_url('assets/dist/assets/index-YUW8ao_m.css', __FILE__),
+            plugins_url('assets/dist/omari-calculator.css', __FILE__),
             array(),
             '1.0.0'
         );
@@ -26,7 +26,7 @@ class ZP_Omari_Calculator
         // Note: The script is a module, so we need to handle that via the script_loader_tag filter in the main plugin file
         wp_register_script(
             'omari-calculator-script',
-            plugins_url('assets/dist/assets/index-CLlZpZCn.js', __FILE__),
+            plugins_url('assets/dist/omari-calculator.js', __FILE__),
             array(),
             '1.0.0',
             true
@@ -39,7 +39,7 @@ class ZP_Omari_Calculator
         wp_enqueue_style('omari-calculator-style');
         wp_enqueue_script('omari-calculator-script');
 
-        return '<div id="app"></div>';
+        return '<div id="omari-calculator"></div>';
     }
 }
 
