@@ -56,6 +56,7 @@ class Plugin
         $this->modules[] = new \ZimPriceCheck\Modules\Sales\NetOneBundles();
         $this->modules[] = new \ZimPriceCheck\Modules\Sales\TelOneZwl();
         $this->modules[] = new \ZimPriceCheck\Modules\Sales\ZesaUsdExpress();
+        $this->modules[] = new \ZimPriceCheck\Modules\Utilities\JoinWhatsApp();
     }
 
     /**

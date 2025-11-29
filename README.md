@@ -1,6 +1,6 @@
 # ZimPriceCheck VueJS Tools
 
-This plugin integrates various VueJS-based tools, calculators, and sales forms into WordPress via shortcodes. It pulls the latest updates from the ZimPriceCheck API and provides a seamless experience for users.
+This plugin integrates various VueJS-based tools, calculators, and sales forms into WordPress via shortcodes. It pulls the latest updates from the Zimpricecheck API and provides a seamless experience for users.
 
 ## Features
 
@@ -26,6 +26,9 @@ E-commerce forms for purchasing various services.
 *   **NetOne Bundles**: Sales form for NetOne bundles.
 *   **TelOne ZWL**: Cart for TelOne ZWL bundles.
 *   **ZESA USD Express**: USD token purchase form for ZESA.
+
+### 4. Utilities
+*   **Join WhatsApp**: Adds a "Join WhatsApp" link/button to posts (currently disabled).
 
 ## Shortcodes
 
@@ -70,10 +73,12 @@ api-vuejs/
 │       ├── Charts/
 │       │   ├── RatesChart.php
 │       │   └── InflationChart.php
-│       └── Sales/
-│           ├── TelOneUsd.php
-│           ├── LiquidHome.php
-│           ├── ...
+│       ├── Sales/
+│       │   ├── TelOneUsd.php
+│       │   ├── LiquidHome.php
+│       │   ├── ...
+│       └── Utilities/
+│           └── JoinWhatsApp.php
 ```
 
 ### Key Concepts

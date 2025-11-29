@@ -25,39 +25,14 @@ function zpc_product_schema()
     }
 }
 require_once plugin_dir_path(__FILE__) . 'options/options-page.php';
-// require_once plugin_dir_path(__FILE__) . "rates-chart/rates.php"; // Migrated
-// require_once plugin_dir_path(__FILE__) . "inflation-rates/inflation.php"; // Migrated
-// require_once plugin_dir_path(__FILE__) . "fx-calc/fx-calc.php"; // Migrated to ZimPriceCheck\Modules\FxCalculator
-require_once plugin_dir_path(__FILE__) . "join-wa/join-wa.php";
-// require_once plugin_dir_path(__FILE__) . "telone-usd/telone-usd.php"; // Migrated
-// require_once plugin_dir_path(__FILE__) . "liquid-home/liquid-home.php"; // Migrated
-// require_once plugin_dir_path(__FILE__) . "usd-airtime/usd-airtime.php"; // Migrated
 require_once plugin_dir_path(__FILE__) . "airtime-post-form/airtime.php";
-require_once plugin_dir_path(__FILE__) . 'join-wa/join-wa.php';
-// require_once plugin_dir_path(__FILE__) . "pinless-usd/pinless-usd.php"; // Migrated
-// require_once plugin_dir_path(__FILE__) . "zesa-express/zesa-express.php"; // Migrated
-// require_once plugin_dir_path(__FILE__) . "zesa-usd-express/zesa-express.php"; // Migrated
-// require_once plugin_dir_path(__FILE__) . "netone-bundles/netone.php"; // Migrated
-// require_once plugin_dir_path(__FILE__) . "telone-zwl/telone-zwl.php"; // Migrated
 require_once plugin_dir_path(__FILE__) . "zimloan/zimloan.php";
-// require_once plugin_dir_path(__FILE__) . "omari-calculator/omari-calculator.php"; // Migrated to ZimPriceCheck\Modules\OmariCalculator
 
 
 /**
  * Registers shortcodes.
  */
 
-// add_shortcode('zim-rates-chart', 'show_latest_rates_chart'); // Migrated
-// add_shortcode('zim-inflation-chart', 'show_latest_inflation_chart'); // Migrated
-// add_shortcode('zim-fx-calc', 'show_rates_calculator'); // Migrated
-// add_shortcode('telone-usd', 'show_telone_usd_cart'); // Migrated
-// add_shortcode('lt-sales', 'show_liquid_home_cart'); // Migrated
-// add_shortcode('usd-airtime-sales', 'show_usd_airtime_cart'); // Migrated
-// add_shortcode('pinless-usd', 'show_pinless_usd'); // Migrated
-// add_shortcode('zesaexpress', 'show_zesaexpress'); // Migrated
-// add_shortcode('netone-bundles', 'show_netone_bundles'); // Migrated
-// add_shortcode('telone-form', 'show_telone_zwl_cart'); // Migrated
-// add_shortcode('zesa_usd', 'show_zesausdexpress'); // Migrated
 
 //Add below post form
 // add_action('avada_before_additional_post_content', 'show_usd_below_post_airtime_form');
@@ -73,19 +48,7 @@ require_once plugin_dir_path(__FILE__) . "zimloan/zimloan.php";
 function add_module_to_vue_scripts($tag, $handle, $src)
 {
     $module_scripts = array(
-        // 'zimpricecheck-rates-js', // Migrated
-        // 'zimpricecheck-inflation-js', // Migrated
-        // 'zimpricecheck-fx-calc2', // Migrated
-        'zp-send-wa-js',
-        // 'zpc_telone_usd_js', // Migrated
-        // 'zpc_telone_zwl_js', // Migrated
-        // 'zpc_lt_cart_js', // Migrated
-        // 'zpc_usdcat_js', // Migrated
         'zpc_post_usd_form',
-        // 'zpc_pinless_js', // Migrated
-        // 'netone_bundles_js', // Migrated
-        // 'zpc_zesausdexpress_js', // Migrated
-        // 'omari-calculator-script', // Migrated
     );
     if (in_array($handle, $module_scripts, true)) {
         $tag = '<script type="module" src="' . esc_url($src) . '"></script>';
