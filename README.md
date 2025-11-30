@@ -10,6 +10,7 @@ The plugin functionality is divided into three main categories:
 Tools for currency conversion and price calculations.
 *   **Omari Calculator**: A specialized calculator for specific transaction types.
 *   **FX Calculator**: Foreign exchange rates calculator.
+*   **Innbucks Calculator**: Calculator for Innbucks transaction fees.
 
 ### 2. Charts
 Visualizations for economic data.
@@ -39,6 +40,7 @@ Use the following shortcodes to embed the tools in your pages or posts:
 | :--- | :--- | :--- |
 | `[omari-calculator]` | Displays the Omari Calculator. | `Calculators\OmariCalculator` |
 | `[zim-fx-calc]` | Displays the FX Calculator. | `Calculators\FxCalculator` |
+| `[innbucks-calculator]` | Displays the Innbucks Calculator. | `Calculators\InnbucksCalculator` |
 | `[zim-rates-chart]` | Displays the Exchange Rates Chart. | `Charts\RatesChart` |
 | `[zim-inflation-chart]` | Displays the Inflation Rates Chart. | `Charts\InflationChart` |
 | `[telone-usd]` | Displays the TelOne USD Cart. | `Sales\TelOneUsd` |
@@ -71,7 +73,8 @@ api-vuejs/
 │   └── Modules/            # Feature modules grouped by category
 │       ├── Calculators/
 │       │   ├── OmariCalculator.php
-│       │   └── FxCalculator.php
+│       │   ├── FxCalculator.php
+│       │   └── InnbucksCalculator.php
 │       ├── Charts/
 │       │   ├── RatesChart.php
 │       │   └── InflationChart.php

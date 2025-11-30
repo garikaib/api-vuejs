@@ -46,6 +46,7 @@ class Plugin
     {
         $this->modules[] = new \Zimpricecheck\Modules\Calculators\OmariCalculator();
         $this->modules[] = new \Zimpricecheck\Modules\Calculators\FxCalculator();
+        $this->modules[] = new \Zimpricecheck\Modules\Calculators\InnbucksCalculator();
         $this->modules[] = new \Zimpricecheck\Modules\Charts\RatesChart();
         $this->modules[] = new \Zimpricecheck\Modules\Charts\InflationChart();
         $this->modules[] = new \Zimpricecheck\Modules\Sales\TelOneUsd();

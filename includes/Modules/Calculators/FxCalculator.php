@@ -16,28 +16,32 @@ class FxCalculator extends AbstractModule
 
     public function enqueue_scripts()
     {
-        $plugin_url = plugin_dir_url(dirname(dirname(dirname(__DIR__))) . '/api-vuejs.php');
-        $base_url = $plugin_url . 'assets/fx-calc/';
+        $plugin_dir = plugin_dir_path(dirname(dirname(dirname(__DIR__))) . '/api-vuejs.php') . 'assets/fx-calc/assets/';
+        $plugin_url = plugin_dir_url(dirname(dirname(dirname(__DIR__))) . '/api-vuejs.php') . 'assets/fx-calc/assets/';
+
+        $js_file = $plugin_dir . 'fx-calc.js';
+        $css_file = $plugin_dir . 'fx-calc.css';
+
+        $js_version = file_exists($js_file) ? date('Y.m.d.H.i', filemtime($js_file)) : '1.0.0';
+        $css_version = file_exists($css_file) ? date('Y.m.d.H.i', filemtime($css_file)) : '1.0.0';
 
         // Register and enqueue scripts.
-        wp_enqueue_script('zimpricecheck-fx-calc1', $base_url . 'index.521592b0.js', array(), null, true);
-        wp_enqueue_script('zimpricecheck-fx-calc2', $base_url . 'webfontloader.cd097671.js', array(), null, true);
+        wp_register_script('zimpricecheck-fx-calc', $plugin_url . 'fx-calc.js', array(), $js_version, true);
+        wp_enqueue_script('zimpricecheck-fx-calc');
 
         // Register and enqueue styles.
-        wp_register_style('zimpricecheck-calc-style', $base_url . 'index.8ea85d8b.css', array(), null);
-        wp_enqueue_style('zimpricecheck-calc-style');
+        wp_register_style('zimpricecheck-fx-calc-style', $plugin_url . 'fx-calc.css', array(), $css_version);
+        wp_enqueue_style('zimpricecheck-fx-calc-style');
     }
 
     public function render_shortcode($atts)
     {
         $this->enqueue_scripts();
-        return "<div id='show-fx-calc'></div>";
+        return '<div id="zp-fx-calc"></div>';
     }
 
     public function get_module_scripts()
     {
-        return array('zimpricecheck-fx-calc2'); // Based on original file, only fx-calc2 was in the module list?
-        // Wait, let's check the original api-vuejs.php module list.
-        // 'zimpricecheck-fx-calc2' is in the list. 'zimpricecheck-fx-calc1' is NOT.
+        return array('zimpricecheck-fx-calc');
     }
 }
